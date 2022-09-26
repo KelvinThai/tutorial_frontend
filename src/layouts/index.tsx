@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/reduxs/hooks";
 import { Flex, Heading, Spacer, Text } from "@chakra-ui/react";
 import { ethers } from "ethers"; 
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, {ReactNode} from 'react';
 
 interface IProps {
@@ -14,6 +15,9 @@ interface IProps {
 }
 
 export default function MainLayout({children}: IProps) {
+  const router = useRouter();
+  console.log(router.pathname)
+
   const dispatch = useAppDispatch();
   const {wallet} = useAppSelector((state) => state.account);
 
@@ -48,7 +52,7 @@ export default function MainLayout({children}: IProps) {
         <Spacer />
         {menus.map((menu) => <Link href={menu.url} key={menu.url}>
             <a>
-              <Text mx="20px" fontSize="20px">{menu.name}</Text>
+              <Text mx="20px" fontSize="20px" textDecoration="underline">{menu.name}</Text>
             </a>
         </Link>)}
       

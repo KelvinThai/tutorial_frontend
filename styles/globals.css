@@ -24,3 +24,7 @@ a {
     background: black;
   }
 }
+
+input.bg-transparent {
+  background: transparent;
+}

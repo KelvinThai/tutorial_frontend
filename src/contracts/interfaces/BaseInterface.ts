@@ -18,17 +18,13 @@ export default class BaseInterface {
     this._provider = provider;
     this._contractAddress = address;
     this._abis = abi;
-    this._option = { gasLimit: 300000 };
+    this._option = { gasLimit: 1000000 };
     this._contract = new ethers.Contract(address, abi, provider.getSigner());
   }
 
   _handleTransactionResponse = async(tx: TransactionResponse) => {
-    try {
       const recept = await tx.wait();
       return recept.transactionHash;
-    } catch(er: any) {
-      throw new Error(er?.reason || `${er}`);
-    }
   }
 
   _numberToEth = (amount: number) => {

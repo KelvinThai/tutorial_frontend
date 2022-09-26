@@ -18,12 +18,14 @@
     "framer-motion": "^6",
     "next": "12.2.5",
     "react": "18.2.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@types/node": "18.7.15",
     "@types/react": "18.0.18",
+    "@types/react-datepicker": "^4.4.2",
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",

@@ -9,8 +9,8 @@ export interface IRate {
 }
 
 export enum TOKEN {
-  BNB = 'BNB',
-  USDT = 'USDT'
+  BNB = "BNB",
+  USDT = "USDT",
 }
 
 export interface IPackage {
@@ -18,8 +18,8 @@ export interface IPackage {
   name: string;
   amount: number;
   icon: string;
-  bg: string; 
-  token : TOKEN;
+  bg: string;
+  token: TOKEN;
 }
 
 export interface IMenu {
@@ -39,12 +39,8 @@ export interface INftItem {
   image: string;
   attributes?: IAttribute[];
   //Listing
-  priceListing?: number;
-  author?: string;
-  //Auction
-  owner?: string;
-  ownerImage?: string;
-  highestBid?: number;
+  price?: number;
+  author?: string;  
 }
 
 export enum Clarity {
@@ -58,3 +54,17 @@ export enum Clarity {
   "SSS",
 }
 export type ActionType = "LIST" | "UNLIST" | "TRANSFER" | "AUCTION";
+
+export interface IAuctionInfo extends  INftItem {
+  auctionId: number;
+  auctioneer: string;
+  tokenId: number;
+  initialPrice: number;
+  previousBidder: string;
+  lastBid: number;
+  lastBidder: string;
+  startTime: number;
+  endTime: number;
+  completed: boolean;
+  active: boolean;
+}
